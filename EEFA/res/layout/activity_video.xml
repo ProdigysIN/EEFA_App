@@ -65,9 +65,9 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="290dp"
-        android:layout_height="290dp"
-        android:layout_weight="0.45"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.53"
         android:text="TextView" />
 
 </LinearLayout>
