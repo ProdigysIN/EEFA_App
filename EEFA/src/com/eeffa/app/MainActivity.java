@@ -17,9 +17,10 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         
         final ListView lvNews = (ListView)findViewById(R.id.lvNews);
-        String[] values = new String[]{ "Tree", "Plant", "Bush", "Flower"};
+        String[] newsTitle = new String[]{ "Tree", "Plant", "Bush", "Flower"};
         
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.main_news_list_element, R.id.lvNews, values);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.main_news_list_element, R.id.newsElementTitle, newsTitle);
+        
         lvNews.setAdapter(adapter);
     }
 
