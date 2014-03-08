@@ -41,9 +41,10 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <RatingBar
-                android:id="@+id/ratingBar1"
+                android:id="@+id/ratingBar"
                 android:layout_width="114dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                android:numStars="4" />
         </LinearLayout>
 
         <ImageView
@@ -64,10 +65,17 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:id="@+id/rating"
+        android:layout_width="92dp"
+        android:layout_height="19dp"
+        android:text="Rating: " />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.53"
-        android:text="TextView" />
+        android:layout_weight="0.00"
+        android:text="Change Rating"
+        android:onClick="changeRating" />
 
 </LinearLayout>
