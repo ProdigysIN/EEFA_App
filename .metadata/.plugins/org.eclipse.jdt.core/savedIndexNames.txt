@@ -1,3 +1,0 @@
-INDEX VERSION 1.126+/Users/ori/Documents/workspace/EEFA_App/.metadata/.plugins/org.eclipse.jdt.core
-2280743702.index
-3371323312.index
