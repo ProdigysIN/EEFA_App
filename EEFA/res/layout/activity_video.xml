@@ -52,12 +52,14 @@
             android:layout_width="72dp"
             android:layout_height="34dp"
             android:layout_weight="0.50"
+            android:layout_gravity="center"
             android:src="@drawable/ic_dislike" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:src="@drawable/ic_like" />
     </LinearLayout>
 
