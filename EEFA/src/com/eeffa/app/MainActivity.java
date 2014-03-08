@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
@@ -20,7 +21,6 @@ public class MainActivity extends Activity {
         String[] newsTitle = new String[]{ "Tree", "Plant", "Bush", "Flower"};
         
         ArrayAdapter adapter = new ArrayAdapter(this, R.layout.main_news_list_element, R.id.newsElementTitle, newsTitle);
-        
         lvNews.setAdapter(adapter);
     }
 
