@@ -11,12 +11,11 @@
     tools:context=".VideoActivity" >
 
     <com.google.android.youtube.player.YouTubePlayerView
-        android:id="@+id/youtube_view"
-        android:layout_width="290dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dip"
-        android:layout_weight="1.33" />
-
+		android:id="@+id/youtube_view"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="12dip"/>
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

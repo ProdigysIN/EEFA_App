@@ -1,22 +1,35 @@
 package com.eeffa.app;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class VideoActivity extends Activity implements OnRatingBarChangeListener{
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayer.Provider;
+import com.google.android.youtube.player.YouTubePlayerView;
+
+public class VideoActivity extends YouTubeBaseActivity implements OnRatingBarChangeListener, YouTubePlayer.OnInitializedListener {
 
 	TextView rt;
 	RatingBar rtb;
+	static private final String DEVELOPER_KEY = "AIzaSyCD9NoLFZg-CtKpE1hiyH0U8qBHZZbqBmc";
+	static private final String VIDEO = "k8gca3fJQpg";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_video);
+		
+		YouTubePlayerView youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+	    youTubeView.initialize(DEVELOPER_KEY, this);
+		
+		
 		rt = (TextView) findViewById(R.id.rating);
 		rtb = (RatingBar) findViewById(R.id.ratingBar);
 		
@@ -45,6 +58,16 @@ public class VideoActivity extends Activity implements OnRatingBarChangeListener
 	public void changeRating(View v){
 		rtb.setRating(1.5f);
 		
+	}
+
+	@Override
+	public void onInitializationFailure(Provider provider, YouTubeInitializationResult error) {
+		Toast.makeText(this, "Oh no! "+error.toString(), Toast.LENGTH_LONG).show();
+	}
+
+	@Override
+	public void onInitializationSuccess(Provider provider, YouTubePlayer player, boolean wasRestored) {
+		player.loadVideo(VIDEO);
 	}
 
 }

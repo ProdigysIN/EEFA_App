@@ -1,13 +1,11 @@
 package com.eeffa.app;
 
-import java.util.ArrayList;
-
-import android.R.string;
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
@@ -31,5 +29,9 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    
+    public void onClick_Video(View v){
+    	startActivityForResult(new Intent(this, VideoActivity.class), 1);
+    	}
     
 }
