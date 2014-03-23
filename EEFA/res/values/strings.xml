@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_video">VideoActivity</string>
     <string name="title_activity_news__list">News_List</string>
+    <string name="title_activity_news_list">NewsListActivity</string>
 
 </resources>

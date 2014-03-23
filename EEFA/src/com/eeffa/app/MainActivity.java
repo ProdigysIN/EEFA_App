@@ -17,29 +17,39 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        // Adding News elements
-        LinearLayout newsLinearLayout = (LinearLayout)findViewById(R.id.main_news_container);
-        for (int i = 0; i < 10; i++) {
-        	LinearLayout eventChild = (LinearLayout) getLayoutInflater().inflate(R.layout.main_news_list_element, null);
-        	newsLinearLayout.addView(eventChild);
-		}
+        addNewsElements();
+        addVideoElements();
+        addEventElements();
         
-        // Adding Video elements
-        LinearLayout videoLinearLayout = (LinearLayout)findViewById(R.id.main_video_container);
-        for (int i = 0; i < 10; i++) {
-        	LinearLayout eventChild = (LinearLayout) getLayoutInflater().inflate(R.layout.main_video_list_element, null);
-        	videoLinearLayout.addView(eventChild);
-		}
         
-        // Adding Event elements
-        LinearLayout eventLinearLayout = (LinearLayout)findViewById(R.id.main_event_container);
+    }
+
+
+	private void addEventElements() {
+		LinearLayout eventLinearLayout = (LinearLayout)findViewById(R.id.main_event_container);
         for (int i = 0; i < 10; i++) {
         	LinearLayout eventChild = (LinearLayout) getLayoutInflater().inflate(R.layout.main_news_list_element, null);
             eventLinearLayout.addView(eventChild);
 		}
-        
-        
-    }
+	}
+
+
+	private void addVideoElements() {
+		LinearLayout videoLinearLayout = (LinearLayout)findViewById(R.id.main_video_container);
+        for (int i = 0; i < 10; i++) {
+        	LinearLayout eventChild = (LinearLayout) getLayoutInflater().inflate(R.layout.main_video_list_element, null);
+        	videoLinearLayout.addView(eventChild);
+		}
+	}
+
+
+	private void addNewsElements() {
+		LinearLayout newsLinearLayout = (LinearLayout)findViewById(R.id.main_news_container);
+        for (int i = 0; i < 10; i++) {
+        	LinearLayout eventChild = (LinearLayout) getLayoutInflater().inflate(R.layout.main_news_list_element, null);
+        	newsLinearLayout.addView(eventChild);
+		}
+	}
 
 
     @Override
@@ -48,9 +58,13 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
+    public void onClick_News_Header(View v){
+    	startActivityForResult(new Intent(this, NewsListActivity.class), 1);
+    }
     
     public void onClick_Video(View v){
     	startActivityForResult(new Intent(this, VideoActivity.class), 1);
-    	}
+    }
     
 }

@@ -33,6 +33,10 @@
             android:name="com.eeffa.app.news_list"
             android:label="@string/title_activity_news__list" >
         </activity>
+        <activity
+            android:name="com.eeffa.app.NewsListActivity"
+            android:label="@string/title_activity_news_list" >
+        </activity>
     </application>
 
 </manifest>
