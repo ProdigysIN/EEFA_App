@@ -18,23 +18,31 @@ public class VideoActivity extends YouTubeBaseActivity implements OnRatingBarCha
 
 	TextView rt;
 	RatingBar rtb;
+	
+	// YouTube Variables
 	static private final String DEVELOPER_KEY = "AIzaSyCD9NoLFZg-CtKpE1hiyH0U8qBHZZbqBmc";
 	static private final String VIDEO = "k8gca3fJQpg";
+	YouTubePlayerView youTubeView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_video);
 		
-		YouTubePlayerView youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
-	    youTubeView.initialize(DEVELOPER_KEY, this);
+		setupYouTube();
 		
-		
+		TextView videoTitle = (TextView)findViewById(R.id.video_title);
+		videoTitle.setText("Dhuna Kibernetike - Siguria ne internet");
+
 		rt = (TextView) findViewById(R.id.rating);
 		rtb = (RatingBar) findViewById(R.id.ratingBar);
-		
 		rtb.setOnRatingBarChangeListener(this);
 		
+	}
+
+	private void setupYouTube() {
+		youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+	    youTubeView.initialize(DEVELOPER_KEY, this);
 	}
 
 	@Override
@@ -69,5 +77,5 @@ public class VideoActivity extends YouTubeBaseActivity implements OnRatingBarCha
 	public void onInitializationSuccess(Provider provider, YouTubePlayer player, boolean wasRestored) {
 		player.loadVideo(VIDEO);
 	}
-
+	
 }
