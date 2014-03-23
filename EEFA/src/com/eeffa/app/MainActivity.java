@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -15,11 +17,28 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        final ListView lvNews = (ListView)findViewById(R.id.lvNews);
-        String[] newsTitle = new String[]{ "Tree", "Plant", "Bush", "Flower"};
+        // Adding News elements
+        LinearLayout newsLinearLayout = (LinearLayout)findViewById(R.id.main_news_container);
+        for (int i = 0; i < 10; i++) {
+        	LinearLayout eventChild = (LinearLayout) getLayoutInflater().inflate(R.layout.main_news_list_element, null);
+        	newsLinearLayout.addView(eventChild);
+		}
         
-        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.main_news_list_element, R.id.newsElementTitle, newsTitle);
-        lvNews.setAdapter(adapter);
+        // Adding Video elements
+        LinearLayout videoLinearLayout = (LinearLayout)findViewById(R.id.main_video_container);
+        for (int i = 0; i < 10; i++) {
+        	LinearLayout eventChild = (LinearLayout) getLayoutInflater().inflate(R.layout.main_video_list_element, null);
+        	videoLinearLayout.addView(eventChild);
+		}
+        
+        // Adding Event elements
+        LinearLayout eventLinearLayout = (LinearLayout)findViewById(R.id.main_event_container);
+        for (int i = 0; i < 10; i++) {
+        	LinearLayout eventChild = (LinearLayout) getLayoutInflater().inflate(R.layout.main_news_list_element, null);
+            eventLinearLayout.addView(eventChild);
+		}
+        
+        
     }
 
 
