@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:onClick="onClick_Video_Elment" >
+        android:layout_height="wrap_content"
+        android:onClick="onClick_Event_Elment" >
 
         <ImageView
             android:id="@+id/imageView1"
@@ -18,11 +18,11 @@
             android:src="@drawable/ic_square" />
 
         <TextView
-            android:id="@+id/videoElementTitle"
+            android:id="@+id/eventElementTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|left"
-            android:text="Video Title"
+            android:text="Event Title"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </LinearLayout>

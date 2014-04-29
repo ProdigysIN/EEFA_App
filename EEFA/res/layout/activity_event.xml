@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".EventActivity" >
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tilesource="Mapnik" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:text="Event Title"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/imageView1"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pharetra ante eu mi pharetra vehicula non a nisi. Morbi pellentesque augue eget nibh eleifend, id accumsan quam iaculis. Donec gravida est at convallis auctor. Aenean quis diam nec augue malesuada suscipit. Nam eu magna ut lectus consequat ornare. Mauris vehicula sit amet mi nec consequat. Mauris sem lectus, dignissim id sagittis ac, pellentesque sed felis. Cras dictum massa non massa volutpat vehicula. Duis ornare, sem in bibendum interdum, quam ante vestibulum nulla, vel tempus tellus purus non urna. Praesent lacus urna, luctus sit amet nibh id, convallis tincidunt nisi.
+
+Vivamus laoreet ullamcorper dapibus. Ut lobortis, ipsum a euismod porttitor, felis orci vulputate augue, et molestie tortor est sit amet magna. Cras rutrum commodo malesuada. Praesent augue risus, tincidunt et facilisis eu, ultricies non urna. In et dolor id dui feugiat ultrices. Phasellus convallis neque sollicitudin pretium porta. Maecenas non venenatis magna. Suspendisse viverra convallis massa vestibulum pretium. Nam quis felis quis leo consequat rutrum. Nam lacinia aliquam erat at feugiat. Ut ipsum odio, lobortis vitae neque non, porta dignissim lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent et elit sit amet nisl tristique tempus ac bibendum libero. Maecenas vitae augue ut odio aliquet luctus in eget felis. Vivamus faucibus consectetur libero, vel laoreet ligula feugiat a.
+
+Donec eu risus condimentum, semper leo eu, sagittis tellus. Nulla non magna arcu. Nullam metus dolor, luctus a pretium sed, congue eget massa. Ut elementum sapien ac massa hendrerit, id scelerisque neque placerat. Nunc et commodo sapien, id rutrum dui. Cras facilisis arcu lectus, vel aliquet nunc feugiat et. Ut non tincidunt velit. Duis accumsan, eros eget vestibulum eleifend, eros massa vulputate tortor, a venenatis purus ante sed dolor. Sed vehicula magna lorem, quis tempus neque laoreet et. Quisque gravida libero quam, sit amet placerat nisi pellentesque sed. Fusce metus quam, gravida nec tempus id, fermentum nec nulla. Aenean sem tellus, auctor vitae rutrum sed, iaculis id tortor. Vivamus dictum purus eu elit pellentesque sollicitudin. Praesent lacinia luctus nibh, nec pulvinar lorem egestas et. Sed vehicula eleifend nunc, a dapibus arcu placerat in.
+
+Donec sit amet mauris non tellus porta posuere a non lorem. Duis sit amet sagittis libero. In accumsan eu nulla posuere imperdiet. Duis suscipit nibh quis nisi ornare pellentesque. In suscipit dictum elit eu ultrices. Fusce sed ultrices est. In sed dignissim orci, et auctor felis. Curabitur ornare lacinia turpis. Curabitur consectetur condimentum varius. Pellentesque commodo nisl id nisl rhoncus venenatis. Etiam vitae sem ac ante fermentum interdum. Donec blandit nibh nec nisl lobortis placerat. Integer ut blandit nisl, nec interdum felis. Morbi nibh augue, lobortis eu egestas a, congue ultrices lorem. Phasellus convallis eros diam, eget aliquam diam sollicitudin eget. Etiam quis vulputate metus.
+
+Fusce mi velit, luctus et lacus quis, rutrum facilisis magna. Aliquam egestas non enim sit amet auctor. Mauris at orci a elit laoreet sodales at eu nunc. Vivamus id cursus lorem, id volutpat elit. Cras non scelerisque odio, ac porta arcu. Proin hendrerit consequat fringilla. Quisque sit amet nunc tincidunt dui ultricies pulvinar. Cras blandit enim ac purus lobortis tristique. Quisque nec magna cursus, ultricies quam in, gravida erat. Integer aliquet vitae dolor quis interdum. Praesent gravida facilisis posuere. Mauris ultricies ipsum vitae suscipit elementum. Nulla nibh augue, imperdiet at ante sit amet, fermentum fringilla enim. Nunc at tellus orci. Ut non tempus urna, a consequat odio.
+
+Fusce mollis placerat tortor at pharetra. Duis vel nibh eget erat vulputate hendrerit vitae non leo. Praesent porta lacus magna. Quisque tincidunt condimentum ultricies. Praesent venenatis erat sit amet nibh bibendum, quis condimentum elit gravida. Mauris tincidunt ipsum eu turpis accumsan, in ultrices risus imperdiet. Nullam sodales blandit est accumsan varius. Maecenas vitae neque volutpat tellus pellentesque accumsan. Mauris odio urna, lobortis ut dapibus at, dictum vel libero. Sed rutrum nisi dictum nunc dignissim pellentesque. Phasellus adipiscing lacus hendrerit ligula congue vehicula. Donec lorem tortor, ullamcorper a volutpat in, euismod ut ante. Integer eget tristique leo. Cras sed tellus et felis cursus porta a sed massa. Maecenas pulvinar mauris et metus congue, vel consectetur felis feugiat." />
+
+            </LinearLayout>
+        </ScrollView>
+    
+</LinearLayout>

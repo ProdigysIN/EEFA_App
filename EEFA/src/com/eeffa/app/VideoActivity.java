@@ -1,11 +1,10 @@
 package com.eeffa.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.View;
-import android.widget.RatingBar;
-import android.widget.RatingBar.OnRatingBarChangeListener;
-import android.widget.TextView;
+import android.view.MenuItem;
+import android.widget.ShareActionProvider;
 import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -14,10 +13,9 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayer.Provider;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class VideoActivity extends YouTubeBaseActivity implements OnRatingBarChangeListener, YouTubePlayer.OnInitializedListener {
+public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
-	TextView rt;
-	RatingBar rtb;
+	private ShareActionProvider mShareActionProvider;
 	
 	// YouTube Variables
 	static private final String DEVELOPER_KEY = "AIzaSyCD9NoLFZg-CtKpE1hiyH0U8qBHZZbqBmc";
@@ -30,14 +28,6 @@ public class VideoActivity extends YouTubeBaseActivity implements OnRatingBarCha
 		setContentView(R.layout.activity_video);
 		
 		setupYouTube();
-		
-		TextView videoTitle = (TextView)findViewById(R.id.video_title);
-		videoTitle.setText("Dhuna Kibernetike - Siguria ne internet");
-
-		rt = (TextView) findViewById(R.id.rating);
-		rtb = (RatingBar) findViewById(R.id.ratingBar);
-		rtb.setOnRatingBarChangeListener(this);
-		
 	}
 
 	private void setupYouTube() {
@@ -49,24 +39,20 @@ public class VideoActivity extends YouTubeBaseActivity implements OnRatingBarCha
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.video, menu);
+		
+
+        MenuItem shareItem = menu.findItem(R.id.action_share);
+        mShareActionProvider = (ShareActionProvider) shareItem.getActionProvider();
+        mShareActionProvider.setShareIntent(getDefaultIntent());
+        
 		return true;
 	}
 
-	@Override
-	public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-		// TODO Auto-generated method stub
-		rt.setText("Rating " + rating + "\n");
-		if(fromUser)
-			rt.setText(rt.getText().toString()+ "Changed by user");
-		else
-			rt.setText(rt.getText().toString()+ "Changed by function");
-		
-	}
-	
-	public void changeRating(View v){
-		rtb.setRating(1.5f);
-		
-	}
+	private Intent getDefaultIntent() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("image/*");
+        return intent;
+    }
 
 	@Override
 	public void onInitializationFailure(Provider provider, YouTubeInitializationResult error) {
