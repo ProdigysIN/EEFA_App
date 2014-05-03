@@ -29,6 +29,6 @@ public class NewsListActivity extends Activity {
 	}
 
 	public void onClick_News_Elment(View v){
-    	startActivityForResult(new Intent(this, NwesActivity.class), 1);
+    	startActivityForResult(new Intent(this, NewsActivity.class), 1);
     }
 }

@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="18" />
+        android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" >
     </uses-permission>
@@ -74,7 +74,7 @@
                 android:value="com.eeffa.app.EventListActivity" />
         </activity>
         <activity
-            android:name="com.eeffa.app.NwesActivity"
+            android:name="com.eeffa.app.NewsActivity"
             android:label="@string/title_activity_nwes"
             android:parentActivityName="com.eeffa.app.NewsListActivity" >
             <meta-data
@@ -83,11 +83,15 @@
         </activity>
         <activity
             android:name="com.eeffa.app.InfoActivity"
-            android:label="@string/title_activity_info" 
+            android:label="@string/title_activity_info"
             android:parentActivityName="com.eeffa.app.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.eeffa.app.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.eeffa.app.ScreenSlideActivity"
+            android:label="@string/title_activity_screen_slide" >
         </activity>
     </application>
 
