@@ -27,7 +27,7 @@ public class NewsActivity extends FragmentActivity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
-        // Instantiate a ViewPager and a PagerAdapter.
+        /*/ Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.pager);
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
@@ -40,7 +40,7 @@ public class NewsActivity extends FragmentActivity {
                 // but for simplicity, the activity provides the actions in this sample.
                 invalidateOptionsMenu();
             }
-        });
+        });*/
 	}
 	
 	/**
@@ -86,19 +86,19 @@ public class NewsActivity extends FragmentActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	  private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+	 /* private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
 	        public ScreenSlidePagerAdapter(android.support.v4.app.FragmentManager fm) {
 	            super(fm);
 	        }
 
 	        @Override
 	        public android.support.v4.app.Fragment getItem(int position) {
-	            return NewsSlideFragment.create(position);
+	       //     return NewsSlideFragment.create(position);
 	        }
 
 	        @Override
 	        public int getCount() {
 	            return NUM_PAGES;
 	        }
-	    }
+	    }*/
 }
